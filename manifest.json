@@ -1,0 +1,27 @@
+{
+    "name": "Tabnabing detect Extension",
+    "version": "1.0",
+    "description": "Tabnabing detect Extension",
+    "background": {
+      "scripts": ["index.js","resemble.js","screenshot.js"],
+      "persistent": true
+    },
+    "page_action": {
+      "default_icon": "images/get_started128.png",
+      "default_popup": "main.html"
+    },
+    "permissions": [
+      "tabs",
+      "tabCapture",
+      "activeTab",
+      "<all_urls>"
+    ],
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["screenshot.js", "resemble.js"]
+      }
+    ],
+    "manifest_version": 2
+  }
+  
